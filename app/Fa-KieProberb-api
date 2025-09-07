@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+
+class ProverbController extends Controller
+{
+    public function random()
+    {
+        $proverbs = [
+            [
+                'proverb' => 'Bato-bato sa langit, ang tamaan ay magalit.',
+                'meaning' => 'Words may hurt, especially if they are true to someone.'
+            ],
+            [
+                'proverb' => 'Kung unsay imong gitanom, mao sab imong pagaanihon.',
+                'meaning' => 'What you plant is what you will harvest — actions have consequences.'
+            ],
+            [
+                'proverb' => 'Ang dili mokatap, dili makakaon.',
+                'meaning' => 'Those who do not work hard will not eat — effort is needed for reward.'
+            ],
+            [
+                'proverb' => 'Ang tawo nga magpaubos, mao’y ipahitas-an.',
+                'meaning' => 'He who humbles himself will be lifted — humility brings honor.'
+            ],
+            [
+                'proverb' => 'Dili nato mabati ang kahayag kung walay kangitngit.',
+                'meaning' => 'We cannot appreciate the light without darkness — struggles give meaning to success.'
+            ],
+            [
+                'proverb' => 'Ang kahoy nga lig-on sa hangin, mao’y dili dali matumba.',
+                'meaning' => 'A tree strong against the wind will not fall easily — resilience makes one strong.'
+            ]
+        ];
+
+        return response()->json($proverbs[array_rand($proverbs)]);
+    }
+}
